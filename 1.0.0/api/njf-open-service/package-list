@@ -7,6 +7,7 @@ $dokka.location:com.njf2016.open.plugins//configureRouting/io.ktor.server.applic
 $dokka.location:com.njf2016.open.plugins//configureSecurity/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-security.md
 $dokka.location:com.njf2016.open.plugins//configureSerialization/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-serialization.md
 $dokka.location:com.njf2016.open.plugins//configureSockets/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-sockets.md
+$dokka.location:com.njf2016.open.plugins//expiresIn/#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/expires-in.md
 $dokka.location:com.njf2016.open.plugins/EchoApp.Client///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-client/index.md
 $dokka.location:com.njf2016.open.plugins/EchoApp.Client/main/#kotlin.Array[kotlin.String]/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-client/main.md
 $dokka.location:com.njf2016.open.plugins/EchoApp.Server///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-server/index.md
