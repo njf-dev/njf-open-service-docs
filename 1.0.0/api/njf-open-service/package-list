@@ -1,0 +1,24 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.njf2016.open.plugins////PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/index.md
+$dokka.location:com.njf2016.open.plugins//configureHTTP/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-h-t-t-p.md
+$dokka.location:com.njf2016.open.plugins//configureMonitoring/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-monitoring.md
+$dokka.location:com.njf2016.open.plugins//configureRouting/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-routing.md
+$dokka.location:com.njf2016.open.plugins//configureSecurity/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-security.md
+$dokka.location:com.njf2016.open.plugins//configureSerialization/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-serialization.md
+$dokka.location:com.njf2016.open.plugins//configureSockets/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/configure-sockets.md
+$dokka.location:com.njf2016.open.plugins/EchoApp.Client///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-client/index.md
+$dokka.location:com.njf2016.open.plugins/EchoApp.Client/main/#kotlin.Array[kotlin.String]/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-client/main.md
+$dokka.location:com.njf2016.open.plugins/EchoApp.Server///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-server/index.md
+$dokka.location:com.njf2016.open.plugins/EchoApp.Server/main/#kotlin.Array[kotlin.String]/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-server/main.md
+$dokka.location:com.njf2016.open.plugins/EchoApp///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/index.md
+$dokka.location:com.njf2016.open.plugins/EchoApp/DefaultPort/#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/-default-port.md
+$dokka.location:com.njf2016.open.plugins/EchoApp/selectorManager/#/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-echo-app/selector-manager.md
+$dokka.location:com.njf2016.open.plugins/TlsRawSocket///PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-tls-raw-socket/index.md
+$dokka.location:com.njf2016.open.plugins/TlsRawSocket/main/#kotlin.Array[kotlin.String]/PointingToDeclaration/njf-open-service/com.njf2016.open.plugins/-tls-raw-socket/main.md
+$dokka.location:com.njf2016.open////PointingToDeclaration/njf-open-service/com.njf2016.open/index.md
+$dokka.location:com.njf2016.open//main/#kotlin.Array[kotlin.String]/PointingToDeclaration/njf-open-service/com.njf2016.open/main.md
+$dokka.location:com.njf2016.open//module/io.ktor.server.application.Application#/PointingToDeclaration/njf-open-service/com.njf2016.open/module.md
+com.njf2016.open
+com.njf2016.open.plugins
+
