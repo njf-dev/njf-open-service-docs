@@ -352,8 +352,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#userphone-secret-accesstoken" class="md-nav__link">
-    根据 userPhone 和 secret 获取 accessToken
+  <a href="#appid-secret-accesstoken" class="md-nav__link">
+    根据 appId 和 secret 获取 accessToken
   </a>
   
 </li>
@@ -414,8 +414,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#userphone-secret-accesstoken" class="md-nav__link">
-    根据 userPhone 和 secret 获取 accessToken
+  <a href="#appid-secret-accesstoken" class="md-nav__link">
+    根据 appId 和 secret 获取 accessToken
   </a>
   
 </li>
@@ -448,8 +448,8 @@
 <p>获取新 token 后，旧 token 会延长 5 分钟失效，保证业务端平稳过度。
 但是，如果旧 token 在刷新时刚好过期，则无法保证成功，所以请提前几分钟获取新 token。</p>
 </div>
-<h2 id="userphone-secret-accesstoken">根据 userPhone 和 secret 获取 accessToken</h2>
-<p>由于开发者与管理者很多情况下并不是同一人，所以我们采用 userPhone 和 secret 的方式进行 token 认证，而不是 userPhone 和
+<h2 id="appid-secret-accesstoken">根据 appId 和 secret 获取 accessToken</h2>
+<p>由于开发者与管理者很多情况下并不是同一人，所以我们采用 appId 和 secret 的方式进行 token 认证，而不是 userPhone 和
 password，这样即保留了认证账号的简单可辨识，又保证了主账号信息安全。</p>
 <ul>
 <li>请求报文</li>
@@ -467,7 +467,7 @@ password，这样即保留了认证账号的简单可辨识，又保证了主账
 <tbody>
 <tr>
 <td align="center"><code>Authorization</code></td>
-<td align="center">Basic 后紧跟半角空格和 userPhone:secret 文本进行 base64 后的字符串</td>
+<td align="center">Basic 后紧跟半角空格和 appId:secret 文本进行 base64 后的字符串</td>
 </tr>
 </tbody>
 </table>
@@ -532,7 +532,7 @@ password，这样即保留了认证账号的简单可辨识，又保证了主账
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-01-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-01-29</span>
       
     
   </small>

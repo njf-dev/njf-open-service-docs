@@ -477,21 +477,21 @@
 <li>application/cbor</li>
 <li>application/protobuf</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="err">### json</span>
-<span class="err">POST http://0.0.0.0:8080/customer</span>
-<span class="err">Content-Type: application/json</span>
+<div class="highlight"><pre><span></span><code>### json
+POST http://0.0.0.0:8080/customer
+Content-Type: application/json
 
-<span class="err">{</span>
-<span class="err">  &quot;id&quot;: 3,</span>
-<span class="err">  &quot;firstName&quot;: &quot;Jet&quot;,</span>
-<span class="err">  &quot;lastName&quot;: &quot;Brains&quot;</span>
-<span class="err">}</span>
+{
+  &quot;id&quot;: 3,
+  &quot;firstName&quot;: &quot;Jet&quot;,
+  &quot;lastName&quot;: &quot;Brains&quot;
+}
 
-<span class="err">### xml</span>
-<span class="err">POST http://0.0.0.0:8080/customer</span>
-<span class="err">Content-Type: application/xml</span>
+### xml
+POST http://0.0.0.0:8080/customer
+Content-Type: application/xml
 
-<span class="err">&lt;Customer id=&quot;3&quot; firstName=&quot;Jet&quot; lastName=&quot;Brains&quot;/&gt;</span>
+&lt;Customer id=&quot;3&quot; firstName=&quot;Jet&quot; lastName=&quot;Brains&quot;/&gt;
 </code></pre></div>
 <h2 id="accept">Accept 响应内容类型</h2>
 <p>Accept 请求头用来告知（服务器）客户端可以处理的内容类型。</p>
@@ -502,13 +502,13 @@
 <li>application/cbor</li>
 <li>application/protobuf</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="err">### json</span>
-<span class="err">POST http://0.0.0.0:8080/customer</span>
-<span class="err">Accept: application/json</span>
+<div class="highlight"><pre><span></span><code>### json
+POST http://0.0.0.0:8080/customer
+Accept: application/json
 
-<span class="err">### xml</span>
-<span class="err">POST http://0.0.0.0:8080/customer</span>
-<span class="err">Accept: application/xml</span>
+### xml
+POST http://0.0.0.0:8080/customer
+Accept: application/xml
 </code></pre></div>
 <h2 id="_1">其他内容类型</h2>
 <p>除了一般 HTTP
@@ -519,7 +519,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-01-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-01-29</span>
       
     
   </small>
