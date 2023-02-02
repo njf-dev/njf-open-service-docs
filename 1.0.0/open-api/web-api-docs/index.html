@@ -430,78 +430,104 @@
       
         <li class="md-nav__item">
   <a href="#web" class="md-nav__link">
-    web 登录
+    登入 web
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#web_1" class="md-nav__link">
-    web 登出
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#codeid" class="md-nav__link">
-    获取扫码登录 codeId
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#codeid_1" class="md-nav__link">
-    查询 codeId 状态
+    登出 web
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    用户扫码和确认信息上报
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     用户信息
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    扫码登录
+  </a>
+  
+    <nav class="md-nav" aria-label="扫码登录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codeid" class="md-nav__link">
+    获取扫码登录 codeId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codeid_1" class="md-nav__link">
+    查询 codeId 状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    用户扫码和确认信息上报
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    业务接口
+  </a>
+  
+    <nav class="md-nav" aria-label="业务接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#secret" class="md-nav__link">
     读取 secret
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#secret_1" class="md-nav__link">
     更新 secret
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
     列出 ip 白名单
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ip_1" class="md-nav__link">
     添加 ip 白名单
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ips" class="md-nav__link">
     删除 ips
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -524,7 +550,7 @@
 <h1 id="webapi">WebApi 接口</h1>
 <p>以下接口是开放服务平台会使用到的接口列表。</p>
 <hr />
-<h2 id="web">web 登录</h2>
+<h2 id="web">登入 web</h2>
 <p>OpenWeb 登录</p>
 <p>采用 Basic 认证，认证成功后除返回用户信息外，token 会存储到 session 中，过期时间前都有效。</p>
 <p>web token 有效期一周，持续使用的话，token 会自动延期。</p>
@@ -617,7 +643,7 @@ WWW-Authenticate: Basic realm=njf-open-web, charset=UTF-8
 </tbody>
 </table>
 <hr />
-<h2 id="web_1">web 登出</h2>
+<h2 id="web_1">登出 web</h2>
 <p>一旦登出，web token 立即失效。</p>
 <ul>
 <li>请求报文示例</li>
@@ -641,7 +667,47 @@ WWW-Authenticate: Basic realm=njf-open-web, charset=UTF-8
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="codeid">获取扫码登录 codeId</h2>
+<h2 id="_1">用户信息</h2>
+<p>读取最新用户信息</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/user
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updalsTassy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;****&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;136********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ips&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="_2">扫码登录</h2>
+<h3 id="codeid">获取扫码登录 codeId</h3>
 <p>扫码登录时通过此接口获取 codeId，前端使用 codeId 查询后续扫码、确认状态。</p>
 <p>参考 <a href="https://v3.processon.com/diagraming/63d9db790791296f58967c5b">扫码登录时序图</a></p>
 <ul>
@@ -688,7 +754,7 @@ WWW-Authenticate: Basic realm=njf-open-web, charset=UTF-8
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="codeid_1">查询 codeId 状态</h2>
+<h3 id="codeid_1">查询 codeId 状态</h3>
 <p>查询 codeId 扫码状态和确认状态。</p>
 <p>若用户确认登录，则后续逻辑与 <code>/web/auth/login</code> 一样，除返回用户信息外，token 会存储到 session 中，过期时间前都有效。</p>
 <div class="admonition note">
@@ -791,7 +857,7 @@ WWW-Authenticate: Basic realm=njf-open-web, charset=UTF-8
 </tbody>
 </table>
 <hr />
-<h2 id="_1">用户扫码和确认信息上报</h2>
+<h3 id="_3">用户扫码和确认信息上报</h3>
 <p>app 上报用户扫码状态和确认状态</p>
 <ul>
 <li>请求报文示例</li>
@@ -872,46 +938,8 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 </tbody>
 </table>
 <hr />
-<h2 id="_2">用户信息</h2>
-<p>读取最新用户信息</p>
-<ul>
-<li>请求报文示例</li>
-</ul>
-<div class="highlight"><pre><span></span><code>GET {{host}}/web/user
-</code></pre></div>
-<ul>
-<li>成功响应</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;updalsTassy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;****&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;userPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;136********&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;ips&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>失败响应</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="secret">读取 secret</h2>
+<h2 id="_4">业务接口</h2>
+<h3 id="secret">读取 secret</h3>
 <p>读取用户在开放接口中使用到的 appId 和 secret 信息</p>
 <ul>
 <li>请求报文示例</li>
@@ -943,7 +971,7 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="secret_1">更新 secret</h2>
+<h3 id="secret_1">更新 secret</h3>
 <p>若业务端发现 secret 泄露，可以生成新的 secret。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -979,7 +1007,7 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ip">列出 ip 白名单</h2>
+<h3 id="ip">列出 ip 白名单</h3>
 <p>列出业务端服务器的 IP 列表</p>
 <ul>
 <li>请求报文示例</li>
@@ -1004,7 +1032,7 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ip_1">添加 ip 白名单</h2>
+<h3 id="ip_1">添加 ip 白名单</h3>
 <p>业务端将 IP 加入白名单</p>
 <ul>
 <li>请求报文示例</li>
@@ -1044,7 +1072,7 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ips">删除 ips</h2>
+<h3 id="ips">删除 ips</h3>
 <p>业务端移除 IP</p>
 <ul>
 <li>请求报文示例</li>
