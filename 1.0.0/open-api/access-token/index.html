@@ -19,7 +19,7 @@
     
     
       
-        <title>access token - 农卷风开放服务</title>
+        <title>AccessToken - 农卷风开放服务</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#access-token" class="md-skip">
+        <a href="#accesstoken" class="md-skip">
           跳转至
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              access token
+              AccessToken
             
           </span>
         </div>
@@ -344,12 +344,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          access token
+          AccessToken
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        access token
+        AccessToken
       </a>
       
         
@@ -368,14 +368,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accesstoken" class="md-nav__link">
+  <a href="#accesstoken_1" class="md-nav__link">
     获取 accessToken
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accesstoken_1" class="md-nav__link">
+  <a href="#accesstoken_2" class="md-nav__link">
     使用 accessToken
   </a>
   
@@ -485,14 +485,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accesstoken" class="md-nav__link">
+  <a href="#accesstoken_1" class="md-nav__link">
     获取 accessToken
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accesstoken_1" class="md-nav__link">
+  <a href="#accesstoken_2" class="md-nav__link">
     使用 accessToken
   </a>
   
@@ -514,7 +514,7 @@
 
 
 
-<h1 id="access-token">access token</h1>
+<h1 id="accesstoken">AccessToken</h1>
 <p>农卷风开放服务使用 <code>accessToken</code> 作为平台全局唯一接口调用凭据，除获取 accessToken 的接口外，调用其他接口时都需带上 accessToken。</p>
 <ol>
 <li>用于校验接口访问/调用是否有权限，<code>有效期暂定为 24 小时</code>，有效期内不需要重复申请，可以重复使用</li>
@@ -527,7 +527,7 @@
 但是，如果旧 token 在刷新时刚好过期，则无法保证成功，所以请提前几分钟获取新 token。</p>
 </div>
 <hr />
-<h2 id="accesstoken">获取 accessToken</h2>
+<h2 id="accesstoken_1">获取 accessToken</h2>
 <p>为保证管理者个人信息安全，我们采用 appId 和 secret 的方式进行 token 认证，这样即保留了认证账号的简单可辨识，又保证了主账号信息安全。</p>
 <p>appId 和 secret 请通过 <a href="htps://open.njf2016.com/" target="_blank">开放平台</a> 获取</p>
 <p>业务端通过访问 <code>/api/auth/token</code> 接口获得 accessToken，访问此接口需要在请求头的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> 带上 Basic 信息，Basic 的内容是 appId:secret 的 base64 编码凭据。</p>
@@ -609,7 +609,7 @@ WWW-Authenticate: Basic realm=njf-open-service, charset=UTF-8
 </tbody>
 </table>
 <hr />
-<h2 id="accesstoken_1">使用 accessToken</h2>
+<h2 id="accesstoken_2">使用 accessToken</h2>
 <p>成功获得 accessToken 后，后续接口都需要在请求头的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> 带上 Bearer 信息，Bearer 的内容是 <code>/api/auth/token</code> 接口获得的 accessToken 字符串，注意这里的内容不需要 base64 编码。</p>
 <ul>
 <li>请求报文示例</li>
@@ -617,7 +617,7 @@ WWW-Authenticate: Basic realm=njf-open-service, charset=UTF-8
 <div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/auth/test
 Authorization: Bearer NzQzZTY**********************************jlkYjE
 </code></pre></div>
-<p>上面是一个示例，具体接口请查看 <a href="/open-api/api-docs">OpenApi 接口文档</a></p>
+<p>上面是一个示例，具体接口请查看 <a href="/njf-open-service-docs/open-api/api-docs">OpenApi 接口文档</a></p>
 
   <hr>
 <div class="md-source-file">
