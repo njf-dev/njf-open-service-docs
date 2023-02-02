@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>WebApi 接口 - 农卷风开放服务</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#webapi" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="农卷风开放服务" class="md-header__button md-logo" aria-label="农卷风开放服务" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            农卷风开放服务
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WebApi 接口
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="系统主题"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="系统主题" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="浅色主题"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="浅色主题" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="深色主题"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="深色主题" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      欢迎
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../guide/" class="md-tabs__link">
+        OpenApi 服务
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-web/" class="md-tabs__link">
+        OpenWeb 服务
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="农卷风开放服务" class="md-nav__button md-logo" aria-label="农卷风开放服务" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    农卷风开放服务
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        欢迎
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          OpenApi 服务
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenApi 服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          OpenApi 服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
+        接入指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-token/" class="md-nav__link">
+        access token
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-api-docs/" class="md-nav__link">
+        OpenApi 接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          OpenWeb 服务
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenWeb 服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          OpenWeb 服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-web/" class="md-nav__link">
+        Open web
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    web 登录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web_1" class="md-nav__link">
+    web 登出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeid" class="md-nav__link">
+    获取扫码登录 codeId
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeid_1" class="md-nav__link">
+    查询 codeId 状态
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用户扫码和确认信息上报
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    用户信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secret" class="md-nav__link">
+    读取 secret
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secret_1" class="md-nav__link">
+    更新 secret
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    列出 ip 白名单
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip_1" class="md-nav__link">
+    添加 ip 白名单
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ips" class="md-nav__link">
+    删除 ips
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="webapi">WebApi 接口</h1>
+<p>以下接口是开放服务平台会使用到的接口列表。</p>
+<hr />
+<h2 id="web">web 登录</h2>
+<p>OpenWeb 登录</p>
+<p>采用 Basic 认证，认证成功后除返回用户信息外，token 会存储到 session 中，过期时间前都有效。</p>
+<p>web token 有效期一周，持续使用的话，token 会自动延期。</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/auth/login
+Authorization: Basic YmFzZTY0KH********************3dvcmQpKQ==
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Authorization</code></td>
+<td align="left">Basic 后紧跟半角空格和 userPhone:md5(password) 文本进行 base64 编码后的字符串</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updalsTassy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;****&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;136********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ips&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段名</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>secret</code></td>
+<td align="left">开放接口中使用到的 appId 和 secret 信息</td>
+</tr>
+<tr>
+<td align="left"><code>ips</code></td>
+<td align="left">ip 列表</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Basic realm=njf-open-web, charset=UTF-8
+</code></pre></div>
+<ul>
+<li>返回码说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">返回码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="left"><code>401</code></td>
+<td align="left">Authorization 错误</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="web_1">web 登出</h2>
+<p>一旦登出，web token 立即失效。</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/auth/logout
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="codeid">获取扫码登录 codeId</h2>
+<p>扫码登录时通过此接口获取 codeId，前端使用 codeId 查询后续扫码、确认状态。</p>
+<p>参考 <a href="https://v3.processon.com/diagraming/63d9db790791296f58967c5b">扫码登录时序图</a></p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/auth/qrcode
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;codeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b6d00e61f*********************&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expiryTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-02-02 10:26:22&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>codeId</code></td>
+<td align="left">用于查询此 codeId 状态</td>
+</tr>
+<tr>
+<td align="left"><code>expiryTime</code></td>
+<td align="left">过期时间</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="codeid_1">查询 codeId 状态</h2>
+<p>查询 codeId 扫码状态和确认状态。</p>
+<p>若用户确认登录，则后续逻辑与 <code>/web/auth/login</code> 一样，除返回用户信息外，token 会存储到 session 中，过期时间前都有效。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>此接口请将超时时间调整为 5 分钟，服务端会在状态变化后返回信息。</p>
+</div>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/auth/qrcode/status?codeId=b6d00e61f*********************
+    &amp;status=0
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求参数</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>codeId</code></td>
+<td align="left">string</td>
+<td align="left">coedId</td>
+</tr>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left">int</td>
+<td align="left">要查询的状态：<br/><code>0 查询扫码状态</code> 成功扫码会返回 201、 <br/><code>1 查询确认状态</code> 确认登录会返回 200 和用户信息，token 会存储到 session，取消登录会返回 203</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><span class="filename">200</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updalsTassy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;****&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;136********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ips&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">201</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The user has scanned the qrcode and waited for the user&#39;s confirmation&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>concentrator</code></td>
+<td align="left">网关编号，可用于查询网关下的设备</td>
+</tr>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left">codeId 的状态码：<br/><code>200</code> 用户确认登录，成功返回信息与 <code>/web/auth/login</code> 一样、<br/><code>201</code> 用户扫码成功、<br/><code>203</code> 用户取消登录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">402</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code has expired&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left"><code>401</code> 查询超时<br/><code>402</code> codeId 过期<br/><code>403</code> 参数 status 错误<br/><code>404</code> 用户不存在或信息错误</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_1">用户扫码和确认信息上报</h2>
+<p>app 上报用户扫码状态和确认状态</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>POST {{host}}/web/auth/qrcode/status
+Content-Type: application/x-www-form-urlencoded
+token: this_is_a_********_token_from_app
+
+codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Content-Type</code></td>
+<td align="left">表单提交</td>
+</tr>
+<tr>
+<td align="left"><code>token</code></td>
+<td align="left">app 端的 token</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">表单参数</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>codeId</code></td>
+<td align="left">string</td>
+<td align="left">coedId</td>
+</tr>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left">int</td>
+<td align="left">上报用户操作：<br/><code>1</code> 用户用户扫码打开页面后即上报、 <br/><code>2</code> 用户确认登录时上报，业务结束<br/><code>3</code> 用户取消时上报，业务结束</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;please add token&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left"><code>401</code> token 不能为空<br/><code>402</code> codeId 过期<br/><code>403</code> codeId 不能为空<br/><code>404</code> token 无效或过期<br/><code>405</code> 参数 status 错误<br/><code>406</code> codeId 状态异常，可能是被其他用户扫过或上报过了</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">用户信息</h2>
+<p>读取最新用户信息</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/user
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updalsTassy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;****&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;136********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ips&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="secret">读取 secret</h2>
+<p>读取用户在开放接口中使用到的 appId 和 secret 信息</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/secret
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7e145b*******************&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="secret_1">更新 secret</h2>
+<p>若业务端发现 secret 泄露，可以生成新的 secret。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>系统会延长 oldSecret 有效期 10 分钟，以便业务端平稳过渡业务。</p>
+</div>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>POST {{host}}/web/secret/update
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-30 11:25:28&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-02-02 10:02:02&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2b456c*******************&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;166189a******************&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="ip">列出 ip 白名单</h2>
+<p>列出业务端服务器的 IP 列表</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET {{host}}/web/whitelist
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1,192.168.0.1,168.168.168.168&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="ip_1">添加 ip 白名单</h2>
+<p>业务端将 IP 加入白名单</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>POST {{host}}/web/whitelist/127.0.0.1%2C192.168.0.1%2C168.168.168.168
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求类型</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>POST</code></td>
+<td align="left">string</td>
+<td align="left">一次可添加多个 ip，用半角逗号链接起来</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="ips">删除 ips</h2>
+<p>业务端移除 IP</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>DELETE {{host}}/web/whitelist/192.168.0.1%2C168.168.168.168
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求类型</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>DELETE</code></td>
+<td align="left">string</td>
+<td align="left">一次可移除多个 ip，用半角逗号链接起来</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authentication failed&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-02</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2023 <a href="https://www.njf2016.com" target="_blank">农卷风</a> 保留所有权利</br><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602006662" target="_blank">粤公网安备44030602006662号</a>&ensp;&ensp;<a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022021730号</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.expand", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
