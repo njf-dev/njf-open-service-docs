@@ -518,7 +518,7 @@
 <p>农卷风开放服务使用 <code>accessToken</code> 作为平台全局唯一接口调用凭据，除获取 accessToken 的接口外，调用其他接口时都需带上 accessToken。</p>
 <ol>
 <li>用于校验接口访问/调用是否有权限，<code>有效期暂定为 24 小时</code>，有效期内不需要重复申请，可以重复使用</li>
-<li>但是一旦获取新 accessToken 会导致旧 token 失效（旧 token 会在新 token 生成 10 分钟后失效），所以请在中控服务器统一获取和刷新 token</li>
+<li>但是一旦获取新 accessToken 会导致旧 token 失效，所以请在中控服务器统一获取和刷新 token</li>
 <li>获取 accessToken 请先配置 IP 白名单，否则会出现接口调用异常</li>
 </ol>
 <div class="admonition note">
@@ -624,7 +624,7 @@ Authorization: Bearer NzQzZTY**********************************jlkYjE
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-04</span>
       
     
   </small>
