@@ -209,7 +209,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../guide/" class="md-tabs__link">
+      <a href="../../open-api/guide/" class="md-tabs__link">
         OpenApi 服务
       </a>
     </li>
@@ -225,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../open-web/" class="md-tabs__link">
+      <a href="../open-web/" class="md-tabs__link">
         OpenWeb 服务
       </a>
     </li>
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guide/" class="md-nav__link">
+      <a href="../../open-api/guide/" class="md-nav__link">
         接入指南
       </a>
     </li>
@@ -326,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access-token/" class="md-nav__link">
+      <a href="../../open-api/access-token/" class="md-nav__link">
         AccessToken
       </a>
     </li>
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-api-docs/" class="md-nav__link">
+      <a href="../../open-api/open-api-docs/" class="md-nav__link">
         OpenApi 接口
       </a>
     </li>
@@ -388,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../open-web/" class="md-nav__link">
+      <a href="../open-web/" class="md-nav__link">
         Open web
       </a>
     </li>
@@ -561,6 +561,10 @@
 <p>OpenWeb 登录</p>
 <p>采用 Basic 认证，认证成功后除返回用户信息外，token 会存储到 session 中，过期时间前都有效。</p>
 <p>web token 有效期一周，持续使用的话，token 会自动延期。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>多次登录不会导致前面的 token 过期，<strong>也就是不抢登</strong>。</p>
+</div>
 <ul>
 <li>请求报文示例</li>
 </ul>
@@ -1127,7 +1131,7 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-04</span>
       
     
   </small>
