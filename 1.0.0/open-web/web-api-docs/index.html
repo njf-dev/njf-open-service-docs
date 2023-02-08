@@ -1048,19 +1048,36 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <ul>
 <li>请求报文示例</li>
 </ul>
-<div class="highlight"><pre><span></span><code>POST {{host}}/web/whitelist/127.0.0.1%2C192.168.0.1%2C168.168.168.168
+<div class="highlight"><pre><span></span><code>POST {{host}}/web/whitelist
+Content-Type: application/x-www-form-urlencoded
+
+ips=127.0.0.1,192.168.0.1,168.168.168.168
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th align="left">请求类型</th>
+<th align="left">请求头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Content-Type</code></td>
+<td align="left">表单提交</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">表单参数</th>
 <th align="left">类型</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>POST</code></td>
+<td align="left"><code>ips</code></td>
 <td align="left">string</td>
 <td align="left">一次可添加多个 ip，用半角逗号链接起来</td>
 </tr>
@@ -1089,18 +1106,35 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 <li>请求报文示例</li>
 </ul>
 <div class="highlight"><pre><span></span><code>DELETE {{host}}/web/whitelist/192.168.0.1%2C168.168.168.168
+Content-Type: application/x-www-form-urlencoded
+
+ips=192.168.0.1,168.168.168.168
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th align="left">请求类型</th>
+<th align="left">请求头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Content-Type</code></td>
+<td align="left">表单提交</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">表单参数</th>
 <th align="left">类型</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>DELETE</code></td>
+<td align="left"><code>ips</code></td>
 <td align="left">string</td>
 <td align="left">一次可移除多个 ip，用半角逗号链接起来</td>
 </tr>
@@ -1124,14 +1158,15 @@ codeId=f96f3e18865f4b00a8324166cd507b8c&amp;status=1
 </code></pre></div>
 <hr />
 <h3 id="_5">设置智慧农业数据回调</h3>
-<p>业务端可设置回调接口，农卷风服务将在设备上报数据时主动推送信息到业务端服务器</p>
+<p>// TODO: 2023/2/8<br />
+业务端可设置回调接口，农卷风服务将在设备上报数据时主动推送信息到业务端服务器</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-08</span>
       
     
   </small>
