@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../guide/">
+        <link rel="prev" href="../open-api-docs/">
       
       
-        <link rel="next" href="../open-api-docs/">
+        <link rel="next" href="../../open-web/open-web/">
       
       <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
-        <title>AccessToken - 农卷风开放服务</title>
+        <title>OpenApi SDK - 农卷风开放服务</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accesstoken" class="md-skip">
+        <a href="#openapi-sdk" class="md-skip">
           跳转至
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AccessToken
+              OpenApi SDK
             
           </span>
         </div>
@@ -334,59 +334,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AccessToken
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../access-token/" class="md-nav__link">
         AccessToken
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#accesstoken_1" class="md-nav__link">
-    获取 accessToken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accesstoken_2" class="md-nav__link">
-    使用 accessToken
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -410,11 +362,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../open-api-sdk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         OpenApi SDK
       </a>
+      
     </li>
   
 
@@ -494,28 +456,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#accesstoken_1" class="md-nav__link">
-    获取 accessToken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accesstoken_2" class="md-nav__link">
-    使用 accessToken
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -530,117 +470,113 @@
 
 
 
-<h1 id="accesstoken">AccessToken</h1>
-<p>农卷风开放服务使用 <code>accessToken</code> 作为平台全局唯一接口调用凭据，除获取 accessToken 的接口外，调用其他接口时都需带上 accessToken。</p>
-<ol>
-<li>用于校验接口访问/调用是否有权限，<code>有效期暂定为 24 小时</code>，有效期内不需要重复申请，可以重复使用</li>
-<li>但是一旦获取新 accessToken 会导致旧 token 失效，所以请在中控服务器统一获取和刷新 token</li>
-<li>获取 accessToken 请先配置 IP 白名单，否则会出现接口调用异常</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>获取新 token 后，旧 token 会延长 10 分钟失效，保证业务端平稳过度。
-但是，如果旧 token 在刷新时刚好过期，则无法保证成功，所以请提前几分钟获取新 token。</p>
+<h1 id="openapi-sdk">OpenApi SDK</h1>
+<p>我们还开源了 <a href="https://github.com/njf-dev/njf-openapi-sdk" target="_blank">openapi-sdk</a>，支持 Java、kotlin 等 jvm 语言开发的后端服务。理论上 jvm 前端也可以使用，但是因为 accessToken 需要在后端维护，所以建议仅在服务端集成。</p>
+<hr />
+<h1 id="_1">使用</h1>
+<p><a href="https://jitpack.io/#com.njf2016/njf-openapi-sdk" target="_blank"><img alt="" src="https://jitpack.io/v/com.njf2016/njf-openapi-sdk.svg" /></a></p>
+<p>发布在 Jitpack，支持 gradle、maven 等，请通过 <a href="https://jitpack.io/#com.njf2016/njf-openapi-sdk" target="_blank">Jitpack openapi-sdk</a> 引入。</p>
+<ul>
+<li>添加 Jitpack 仓库</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">gradle</label><label for="__tabbed_1_2">maven</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">allprojects</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="s1">&#39;https://jitpack.io&#39;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;jitpack.io&lt;/id&gt;
+        &lt;url&gt;https://jitpack.io&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>正式版</li>
+</ul>
+<p>请填入上方版本号，或跳转到 <a href="https://jitpack.io/#com.njf2016/njf-openapi-sdk" target="_blank">Jitpack openapi-sdk</a> 查看历史版本。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">gradle</label><label for="__tabbed_2_2">maven</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.njf2016:njf-openapi-sdk:&lt;VERSION&gt;&#39;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.njf2016&lt;/groupId&gt;
+    &lt;artifactId&gt;njf-openapi-sdk&lt;/artifactId&gt;
+    &lt;version&gt;Tag&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>开发版</li>
+</ul>
+<p>开发版可能支持最新功能、修复一些问题，但测试可能不到位，可能会存在一些 bug。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">gradle</label><label for="__tabbed_3_2">maven</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.njf2016:njf-openapi-sdk:main-SNAPSHOT&#39;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.njf2016&lt;/groupId&gt;
+    &lt;artifactId&gt;njf-openapi-sdk&lt;/artifactId&gt;
+    &lt;version&gt;main-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
+</div>
+</div>
 </div>
 <hr />
-<h2 id="accesstoken_1">获取 accessToken</h2>
-<p>为保证管理者个人信息安全，我们采用 appId 和 secret 的方式进行 token 认证，这样即保留了认证账号的简单可辨识，又保证了主账号信息安全。</p>
-<p>appId 和 secret 请通过 <a href="https://open.njf2016.com/" target="_blank">开放平台</a> 获取</p>
-<p>业务端通过访问 <code>/api/auth/token</code> 接口获得 accessToken，访问此接口需要在请求头的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> 带上 Basic 信息，Basic 的内容是 appId:secret 的 base64 编码凭据。</p>
-<ul>
-<li>请求报文示例</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="err">GET https://open.njf2016.com/api/auth/token</span>
-<span class="err">Authorization: Basic N2FjNjZj*******************************************WVkNGUwNzY=</span>
+<h2 id="_2">开源协议</h2>
+<p><img alt="license" src="https://image2.njf2016.com/docs/license-light.jpeg#only-light" />
+<img alt="license" src="https://image2.njf2016.com/docs/license-dark.jpeg#only-dark" /></p>
+<div class="highlight"><pre><span></span><code>MIT License
+
+Copyright (c) 2023 农卷风技术
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 </code></pre></div>
-<table>
-<thead>
-<tr>
-<th align="left">请求头</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>Authorization</code></td>
-<td align="left">Basic 后紧跟半角空格和 appId:secret 文本进行 base64 编码后的字符串</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>成功响应</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NzQzZTY**********************************jlkYjE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;expiresIn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-31 10:02:55&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th align="left">字段名</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>accessToken</code></td>
-<td align="left">获取的 accessToken</td>
-</tr>
-<tr>
-<td align="left"><code>expiresIn</code></td>
-<td align="left">具体过期时间</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>失败响应</li>
-</ul>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
-WWW-Authenticate: Basic realm=njf-open-service, charset=UTF-8
-</code></pre></div>
-<ul>
-<li>返回码说明</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">返回码</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>200</code></td>
-<td align="left">请求成功</td>
-</tr>
-<tr>
-<td align="left"><code>401</code></td>
-<td align="left">Authorization 错误</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="accesstoken_2">使用 accessToken</h2>
-<p>成功获得 accessToken 后，后续接口都需要在请求头的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization</a> 带上 Bearer 信息，Bearer 的内容是 <code>/api/auth/token</code> 接口获得的 accessToken 字符串，注意这里的内容不需要 base64 编码。</p>
-<ul>
-<li>请求报文示例</li>
-</ul>
-<div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/auth/test
-Authorization: Bearer NzQzZTY**********************************jlkYjE
-</code></pre></div>
-<p>上面是一个示例，具体接口请查看 <a href="/njf-open-service-docs/latest/open-api/open-api-docs">OpenApi 接口文档</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-14</span>
       
     
   </small>
