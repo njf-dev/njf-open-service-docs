@@ -1,0 +1,1227 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../access-token/">
+      
+      
+        <link rel="next" href="../open-api-sdk/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>OpenApi 接口 - 农卷风开放服务</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openapi" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
+            
+            
+<a href="https://open.njf2016.com/" target="_blank" style="color: beige"><strong>农卷风开放平台</strong></a> <span
+        style="color: grey">已正式上线，我们还发布并开源了</span>
+<a href="https://docs.njf2016.com/njf-open-service-docs/latest/open-api/open-api-sdk/" style="color: beige">
+    <strong>OpenApi-SDK</strong>
+</a>
+
+          </div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="农卷风开放服务" class="md-header__button md-logo" aria-label="农卷风开放服务" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            农卷风开放服务
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenApi 接口
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="系统主题"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="系统主题" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="浅色主题"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="浅色主题" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="深色主题"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="深色主题" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      欢迎
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-web/" class="md-tabs__link">
+        OpenWeb 服务
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        OpenApi 服务
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../open-api-sdk/" class="md-tabs__link">
+      OpenApi SDK
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="农卷风开放服务" class="md-nav__button md-logo" aria-label="农卷风开放服务" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    农卷风开放服务
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        欢迎
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../open-web/">OpenWeb 服务</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="OpenWeb 服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          OpenWeb 服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-web/open-web-app-config/" class="md-nav__link">
+        应用配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-web/open-web-callback-config/" class="md-nav__link">
+        回调配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../open-web/intelli/">智慧农业模块</a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="智慧农业模块" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          智慧农业模块
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-web/intelli/report/" class="md-nav__link">
+        数据报表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">OpenApi 服务</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="OpenApi 服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          OpenApi 服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-token/" class="md-nav__link">
+        AccessToken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenApi 接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OpenApi 接口
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accesstoken" class="md-nav__link">
+    测试 accessToken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    读取网关列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    读取传感器列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    读取传感器数据
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-api-sdk/" class="md-nav__link">
+        OpenApi SDK
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accesstoken" class="md-nav__link">
+    测试 accessToken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    读取网关列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    读取传感器列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    读取传感器数据
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="openapi">OpenApi 接口</h1>
+<p>以下接口的调用需要提供认证信息，也就是需要带上 accessToken，请先阅读 <a href="/njf-open-service-docs/latest/open-api/access-token">获取 access token</a></p>
+<hr />
+<h2 id="accesstoken">测试 accessToken</h2>
+<p>仅用于测试 accessToken 有效性，无其他效用。</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/auth/test
+Authorization: Bearer NzQzZTY**********************************jlkYjE
+</code></pre></div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试农场主&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>返回码说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">返回码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">请求成功</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm=njf-open-access-token
+</code></pre></div>
+<hr />
+<h2 id="_1">读取网关列表</h2>
+<p>读取当前账号的智慧农业网关列表</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/intelli/concentrators?page=1&amp;num=16
+Authorization: Bearer NzQzZTY**********************************jlkYjE
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求参数</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>page</code></td>
+<td align="left">int</td>
+<td align="left">分页页码（从 1 开始）</td>
+</tr>
+<tr>
+<td align="left"><code>num</code></td>
+<td align="left">int</td>
+<td align="left">分页内条目数量（最大 100）</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果返回的 <code>content</code> 条目是空或者少于 <code>num</code>，则说明没有更多数据了。</p>
+</div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;concentrator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;234567891&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1652256002275&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1652256002275&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deviceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SCIGW&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.12911</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">113.264</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;大米基地1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;online&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;baud&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9600</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//    ...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>concentrator</code></td>
+<td align="left">网关编号，可用于查询网关下的设备</td>
+</tr>
+<tr>
+<td align="left"><code>createTime</code></td>
+<td align="left">创建时间</td>
+</tr>
+<tr>
+<td align="left"><code>updateTime</code></td>
+<td align="left">最后更新时间</td>
+</tr>
+<tr>
+<td align="left"><code>deviceType</code></td>
+<td align="left">设备类型</td>
+</tr>
+<tr>
+<td align="left"><code>lat</code></td>
+<td align="left">纬度</td>
+</tr>
+<tr>
+<td align="left"><code>lng</code></td>
+<td align="left">经度</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left">用户自定义的设备名称</td>
+</tr>
+<tr>
+<td align="left"><code>online</code></td>
+<td align="left">在线状态：1 在线，0 离线</td>
+</tr>
+<tr>
+<td align="left"><code>baud</code></td>
+<td align="left">波特率</td>
+</tr>
+<tr>
+<td align="left"><code>period</code></td>
+<td align="left">数据采集周期</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回码说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">返回码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">请求成功</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm=njf-open-access-token
+</code></pre></div>
+<h2 id="_2">读取传感器列表</h2>
+<p>读取当前账号的智慧农业网关下的传感器列表</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/intelli/devices?concentrator=866714048687551
+Authorization: Bearer NzQzZTY**********************************jlkYjE
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求参数</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>concentrator</code></td>
+<td align="left">string</td>
+<td align="left">网关编号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;119684d06c0c4729816961533dca5461&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-02-16 18:32:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;concentrator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;866714048687551&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;circuit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soilH&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;latestData&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;latestTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1645008377202</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4#土壤湿度&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;online&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sequence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soilH&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;typeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;土壤湿度&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//    ...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>id</code></td>
+<td align="left">传感器设备编号，可用于查询设备的数据</td>
+</tr>
+<tr>
+<td align="left"><code>createtime</code></td>
+<td align="left">创建时间</td>
+</tr>
+<tr>
+<td align="left"><code>valid</code></td>
+<td align="left">1 有效设备，0 无效设备</td>
+</tr>
+<tr>
+<td align="left"><code>concentrator</code></td>
+<td align="left">设备所在网关编号</td>
+</tr>
+<tr>
+<td align="left"><code>circuit</code></td>
+<td align="left">设备类型简称</td>
+</tr>
+<tr>
+<td align="left"><code>code</code></td>
+<td align="left">原始数据转有效数据的 js 代码</td>
+</tr>
+<tr>
+<td align="left"><code>latestData</code></td>
+<td align="left">最后上报的数据</td>
+</tr>
+<tr>
+<td align="left"><code>latestTime</code></td>
+<td align="left">最后上报数据时间</td>
+</tr>
+<tr>
+<td align="left"><code>latitude</code></td>
+<td align="left">纬度</td>
+</tr>
+<tr>
+<td align="left"><code>longitude</code></td>
+<td align="left">经度</td>
+</tr>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="left">用户自定义的设备名称</td>
+</tr>
+<tr>
+<td align="left"><code>online</code></td>
+<td align="left">在线状态：1 在线，0 离线</td>
+</tr>
+<tr>
+<td align="left"><code>sequence</code></td>
+<td align="left">用户自定义的设备排序位置</td>
+</tr>
+<tr>
+<td align="left"><code>type</code></td>
+<td align="left">设备类型</td>
+</tr>
+<tr>
+<td align="left"><code>typeName</code></td>
+<td align="left">设备类型名称</td>
+</tr>
+<tr>
+<td align="left"><code>unit</code></td>
+<td align="left">数据单位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回码说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">返回码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">请求成功</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm=njf-open-access-token
+</code></pre></div>
+<h2 id="_3">读取传感器数据</h2>
+<p>读取当前账号的智慧农业网关下的传感器的数据</p>
+<ul>
+<li>请求报文示例</li>
+</ul>
+<p><code>此示例为了阅读方便进行格式换行，实际请求不需要这样做。</code></p>
+<div class="highlight"><pre><span></span><code>GET https://open.njf2016.com/api/intelli/data?deviceId=119684d06c0c4729816961533dca5461
+    &amp;latest=false
+    &amp;time=2022-02-16
+    &amp;startTime=2022-02-16 18:33:00&amp;endTime=2022-02-16 19:00:00
+    &amp;page=1
+    &amp;num=3
+Authorization: Bearer NzQzZTY**********************************jlkYjE
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">请求参数</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>deviceId</code></td>
+<td align="left">string</td>
+<td align="left">传感器设备编号</td>
+</tr>
+<tr>
+<td align="left"><code>latest</code></td>
+<td align="left">boolean</td>
+<td align="left">（可选，优先级最高）读取最后一次有数据上报的当天整天数据</td>
+</tr>
+<tr>
+<td align="left"><code>time</code></td>
+<td align="left">string</td>
+<td align="left">（可选，优先级第二）指定读取某一天的数据，支持 <code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td align="left"><code>startTime</code></td>
+<td align="left">string</td>
+<td align="left">（可选，优先级第三）按时间区间读取数据的开始时间，支持 <code>yyyy-MM-dd</code> 和 <code>yyyy-MM-dd HH:mm:ss</code> 两种格式</td>
+</tr>
+<tr>
+<td align="left"><code>endTime</code></td>
+<td align="left">string</td>
+<td align="left">（可选，优先级第三）按时间区间读取数据的结束时间，支持 <code>yyyy-MM-dd</code> 和 <code>yyyy-MM-dd HH:mm:ss</code> 两种格式</td>
+</tr>
+<tr>
+<td align="left"><code>page</code></td>
+<td align="left">int</td>
+<td align="left">分页页码（从 1 开始）</td>
+</tr>
+<tr>
+<td align="left"><code>num</code></td>
+<td align="left">int</td>
+<td align="left">分页内条目数量（最大 100）</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>startTime 与 endTime 需要成对出现。</p>
+</li>
+<li>
+<p>如果 latest、time、startTime、endTime 都没有传参的话，会返回当天整天数据。</p>
+</li>
+<li>
+<p>如果返回的 <code>content</code> 条目是空或者少于 <code>num</code>，则说明没有更多数据了。</p>
+</li>
+</ul>
+</div>
+<ul>
+<li>成功响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;579094&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;119684d06c0c4729816961533dca5461&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-02-16 18:32:04&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;convertData&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//    ...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>deviceId</code></td>
+<td align="left">数据的传感器设备编号</td>
+</tr>
+<tr>
+<td align="left"><code>time</code></td>
+<td align="left">上报或存储时间</td>
+</tr>
+<tr>
+<td align="left"><code>data</code></td>
+<td align="left">原始值</td>
+</tr>
+<tr>
+<td align="left"><code>convertData</code></td>
+<td align="left">转换后的值</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回码说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">返回码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="left"><code>400</code></td>
+<td align="left">时间格式错误</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>失败响应</li>
+</ul>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm=njf-open-access-token
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-04</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2023 <a href="https://www.njf2016.com" target="_blank">农卷风</a> 保留所有权利</br><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602006662" target="_blank">粤公网安备44030602006662号</a>&ensp;&ensp;<a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022021730号</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "navigation.indexes", "toc.follow", "content.code.copy", "content.tabs.link", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
