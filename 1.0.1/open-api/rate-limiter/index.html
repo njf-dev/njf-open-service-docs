@@ -735,7 +735,7 @@
 <h2 id="ip">IP 地址限制</h2>
 <p>请先通过农卷风开放服务平台<a href="https://open.njf2016.com//#/manage/setting/application" target="_blank">【控制台】-【应用配置】</a>设置您服务器的 IP 地址。</p>
 <p>若 IP 地址校验不通过，服务器将发送 <code>403 Forbidden</code></p>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 403 Forbidden
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">403</span> <span class="ne">Forbidden</span>
 
 {
   &quot;status&quot;: 403,
@@ -785,28 +785,27 @@
 <tbody>
 <tr>
 <td align="left"><code>X-RateLimit-Scope</code></td>
-<td align="left">本次限制范围标志</td>
+<td align="left">接口所属限制范围标志</td>
 </tr>
 <tr>
 <td align="left"><code>X-RateLimit-Limit</code></td>
-<td align="left">在本限制周期内总的可调用次数</td>
+<td align="left">限制周期内总的可调用次数</td>
 </tr>
 <tr>
 <td align="left"><code>X-RateLimit-Remaining</code></td>
-<td align="left">在本限制周期内剩余可调用次数</td>
+<td align="left">限制周期内剩余可调用次数</td>
 </tr>
 <tr>
 <td align="left"><code>X-RateLimit-Reset</code></td>
-<td align="left">本限制周期结束时间的 UTC 时间戳（以秒为单位）</td>
+<td align="left">限制周期结束时间的 UTC 时间戳（以秒为单位）</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
-X-Request-ID: call_id_acc3911c65094de885fc5e91b16f19e7
-X-RateLimit-Scope: auth
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 99
-X-RateLimit-Reset: 1677383251
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-RateLimit-Scope</span><span class="o">:</span> <span class="l">auth</span>
+<span class="na">X-RateLimit-Limit</span><span class="o">:</span> <span class="l">100</span>
+<span class="na">X-RateLimit-Remaining</span><span class="o">:</span> <span class="l">99</span>
+<span class="na">X-RateLimit-Reset</span><span class="o">:</span> <span class="l">1677383251</span>
 
 {
   &quot;content&quot;: {},
@@ -827,7 +826,7 @@ X-RateLimit-Reset: 1677383251
 <tbody>
 <tr>
 <td align="left"><code>X-RateLimit-Scope</code></td>
-<td align="left">本次限制范围标志</td>
+<td align="left">接口所属限制范围标志</td>
 </tr>
 <tr>
 <td align="left"><code>Retry-After</code></td>
@@ -835,9 +834,9 @@ X-RateLimit-Reset: 1677383251
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 429 Too Many Requests
-X-RateLimit-Scope: auth
-Retry-After: 86389
+<div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">429</span> <span class="ne">Too Many Requests</span>
+<span class="na">X-RateLimit-Scope</span><span class="o">:</span> <span class="l">auth</span>
+<span class="na">Retry-After</span><span class="o">:</span> <span class="l">86389</span>
 
 {
   &quot;status&quot;: 429,
